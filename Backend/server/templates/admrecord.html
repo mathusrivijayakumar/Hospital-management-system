@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records</title>
+</head>
+<body>
+
+<h1>Medical Records</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Record ID</th>
+            <th>Doctor ID</th>
+            <th>Doctor Name</th>
+            <th>Date</th>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Blood Group</th>
+            <th>Description</th>
+            <th>Next Appointment</th>
+            <th>Treatment Plan</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+            <tr>
+                <td>{{ record.rid }}</td>
+                <td>{{ record.docid }}</td>
+                <td>{{ record.docname }}</td>
+                <td>{{ record.date }}</td>
+                <td>{{ record.pid }}</td>
+                <td>{{ record.pname }}</td>
+                <td>{{ record.age }}</td>
+                <td>{{ record.bldgrp }}</td>
+                <td>{{ record.desc }}</td>
+                <td>{{ record.nxtapp }}</td>
+                <td>{{ record.tplan }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

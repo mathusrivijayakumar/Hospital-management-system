@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+{%block body%}
+  {% load static %}
+  <link rel="stylesheet" href="{% static "css/home.css"%}">
+  <script src="{% static "js/home.js" %}" type="text/javascript" defer></script>
+  <div class="fixed-top">
+    <nav class="navbar" style="background-color: aqua;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="{% static "img/heart-pulse.svg"%}" alt="heart pulse icon" height="30"> A1 Healthcare</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <button class="btn btn-outline-success" href="{% url "login" %}">Logout</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static "img/doctors.jpg"%}" class="d-block w-100" alt="couple">
+              <div class="container">
+                <div class="carousel-caption text-start">
+                  <h1 style="color:azure">24x7 Heathcare</h1>
+                  <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static "img/Surgery.jpg"%}" class="d-block w-100" alt="family"> 
+                 <div class="container">
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static "img/nursing assistance.jpg"%}" class="d-block w-100" alt="dog">
+                <div class="container">
+                <div class="carousel-caption text-end">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <section class="top-widgets">
+          <div class="widget-mr">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-md-11">
+                        <div class="row row-cols-3 row-cols-lg-6 g-2 g-lg-4">
+                               <div class="col">
+                                 <a href="{% url "bookapp" patient %}" target="_blank" class="tp_widget" id="btn-cta-bb-book-appointment">
+                                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bookappt_icon.svg" alt="icon" width="64">
+                                    <h5>Book Appointment</h5>
+                                 </a>
+                              </div>
+                               <div class="col  d-none d-sm-block">
+                     <a href="{% url "viewapps" patient %}" target="_blank" class="tp_widget" id="btn-cta-bb-book-prohealth">
+                        <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bookhelathcheck_icon.svg" alt="icon">
+                        <h5>My Appointments</h5>
+                     </a>
+                  </div>
+                              <div class="col">
+                                 <a href="{% url "patmedrec" patient %}" target="_blank" id="btn-cta-bb-book-labtest" class="tp_widget">
+                                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/finddoctor_icon.svg" alt="icon">
+                                    <h5>View Health Record</h5>
+                                 </a>
+                              </div> 
+    
+    
+                        </div>
+                    </div>
+                </div>
+    
+    
+            </div>
+        </div>
+    
+        <div class="clear-fix"></div>
+      
+      </section>
+      <div class="card p-5">
+        <div class="row g-xl-5 g-2 pt-lg-4 pt-2 pb-3 pb-lg-0">
+          <div class="col-md-6">
+              <div class="d-flex gap-3">
+                  <!-- <div class="vr"></div> -->
+                  <div class="d-flex gap-4 py-2 pt-3 why_point ms-5">
+                      <div class="flex-shrink-0">
+                          <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v2/images/healinghands.svg" alt="" class="point_icon">
+                      </div>
+                      <div class="flex-grow-1 why_ah_points">
+                          <h4><span class="counter-holder">73</span>+</h4>
+                          <div>Largest private healthcare network of Hospitals</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="d-flex gap-3">
+                  <!-- <div class="vr"></div> -->
+                  <div class="d-flex gap-4 py-2 pt-3 why_point ms-5">
+                      <div class="flex-shrink-0">
+                          <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v2/images/pharmacies.svg" alt="" class="point_icon">
+                      </div>
+                      <div class="flex-grow-1 why_ah_points">
+                          <h4><span class="counter-holder">400</span>+</h4>
+                          <div>Largest private network of clinics across India</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="d-flex gap-3">
+                  <!-- <div class="vr"></div> -->
+                  <div class="d-flex gap-4 py-2 pt-3 why_point ms-5">
+                      <div class="flex-shrink-0">
+                          <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v2/images/adavanced.svg" alt="" class="point_icon">
+                      </div>
+                      <div class="flex-grow-1 why_ah_points">
+                          <h4><span class="counter-holder">1,100</span>+</h4>
+                          <div>Diagnostic centres across India</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="d-flex gap-3">
+                  <!-- <div class="vr"></div> -->
+                  <div class="d-flex gap-4 py-2 pt-3 why_point ms-5">
+                      <div class="flex-shrink-0">
+                          <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v2/images/pharmacies.svg" alt="" class="point_icon">
+                      </div>
+                      <div class="flex-grow-1 why_ah_points">
+                          <h4><span class="counter-holder">5,000</span>+</h4>
+                          <div>Pharmacies</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="d-flex gap-3">
+                  <!-- <div class="vr"></div> -->
+                  <div class="d-flex gap-4 py-2 pt-3 why_point ms-5">
+                      <div class="flex-shrink-0">
+                          <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v2/images/pharmacies.svg" alt="" class="point_icon">
+                      </div>
+                      <div class="flex-grow-1 why_ah_points">
+                          <h4><span class="counter-holder">10,000</span>+</h4>
+                          <div>Pin codes Served across India</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="d-flex gap-3">
+                  <!-- <div class="vr"></div> -->
+                  <div class="d-flex gap-4 py-2 pt-3 why_point ms-5">
+                      <div class="flex-shrink-0">
+                          <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v2/images/pharmacies.svg" alt="" class="point_icon">
+                      </div>
+                      <div class="flex-grow-1 why_ah_points">
+                          <h4><span class="counter-holder">11,000</span>+</h4>
+                          <div>Doctors</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+    </div>
+        </div>
+        <footer class="container">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>© 2017–2023 A1 Healthcare, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </footer>
+
+{%endblock%}

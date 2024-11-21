@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{%block body%}
+  {% load static %}
+  <link rel="stylesheet" href="{% static "css/dochome.css"%}">
+  <script src="{% static "js/signup.js" %}" type="text/javascript" defer></script>
+  <div class="container-fluid">
+    <div class="fixed-top mb-5">
+      <nav class="navbar" style="background-color: aqua;">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="{% static "img/heart-pulse.svg"%}" alt="heart pulse icon" height="30"> A1 Healthcare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <button class="btn btn-outline-success" href="./login.html">Login</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+  <div class="card mt-3">
+    <div class=" ms-5 mt-5">
+      <h1 style="color: black;">ADD MEDICAL RECORD</h1>
+    </div>
+  <hr class="my-4">
+    <div class="main">
+        <form method="POST" action="/addrecord" id="form">
+          {% csrf_token %}
+            <div class="in">
+              <label for="dname" class="form-label">Doctor Name</label>
+              <input type="text" class="form-control" id="dname" name="dname">
+              <div class="error"></div>
+            </div>
+
+            <div class="in">
+                <label for="date" class="form-label">Date & Time</label>
+                <input type="datetime-local" id="date_time" name="date_time">
+                <div class="error"></div>
+              </div>
+
+            <div class="in">
+                <label for="pname" class="form-label">Patient Name</label>
+                <input type="text" class="form-control" id="pname" name="pname">
+                <div class="error"></div>
+            </div>
+  
+            <div class="in">
+              <label for="age" class="form-label">Age</label>
+              <input type="text" class="form-control" id="age" name="age">
+              <div class="error"></div>
+            </div>
+ 
+            <div class="in">
+                <label for="bgrp" class="form-label">Blood Group</label>
+                <select class="form-select" name="bgrp" id="bgrp" aria-label="Default select example">
+                    <option selected>Select Blood Group</option>
+                    <option value="O+ve">O+ve</option>
+                    <option value="A+ve">A+ve</option>
+                    <option value="B+ve">B+ve</option>
+                    <option value="O-ve">O-ve</option>
+                    <option value="A-ve">A-ve</option>
+                    <option value="B-ve">B-ve</option>
+                  </select>
+                <div class="error"></div>
+              </div>
+
+            <div class="in">
+                <label for="desc" class="form-label">Description</label>
+                <input type="text" class="form-control" id="desc" name="desc">
+                <div class="error"></div>
+              </div>
+
+            <div class="in">
+                <label for="nextdt" class="form-label">Next Appointment Date</label>
+                <input type="datetime-local" class="form-control" id="nextdt" name="nextdt">
+                <div class="error"></div>
+            </div>
+  
+            <div class="in">
+              <label for="trtplan" class="form-label">Treatment Plan</label>
+              <input type="text" class="form-control" id="trtplan" name="trtplan">
+              <div class="error"></div>
+            </div>
+          
+          <hr class="my-4">
+  
+          <button type="submit">ADD RECORD</button>
+          <hr class="my-4">
+        </form>
+    </div>
+  </div>
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2017–2023 A1 Healthcare, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+  </div>
+{%endblock%}

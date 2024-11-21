@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/appointment.css"%}">
+<div class="fixed-top">
+<nav class="navbar" style="background-color: aqua;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="{% static "img/heart-pulse.svg"%}" alt="heart pulse icon" height="30"> A1 Healthcare</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url "home" %}">Home</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <button class="btn btn-outline-success" href="{% url "login" %}">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
+    <div class="card mt-5">
+        <div class=" ms-5 mt-3 mb-2">
+          <h1>Book Appoinment with Dr.{{doctor.docname}}</h1>
+        </div>
+      <hr class="my-4">
+        <div class="main">
+            <form method="POST" action="{% url "appoint" patient doctor.docid %}" id="form">
+              {% csrf_token %}
+                <div class="in">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="datetime-local" class="form-control" id="date_time" name="date_time" placeholder="DD-MM-YYYY">
+                  <div class="error"></div>
+                </div>
+
+                  <div class="in">
+                    <label for="desc" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="desc" name="desc" placeholder="Enter your symptoms">
+                    <div class="error"></div>
+                  </div>
+              
+              <hr class="my-4">
+      
+              <button type="submit">Book Appoinment</button>
+      
+              <hr class="my-4">
+            </form>
+        </div>
+      </div>
+      <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2017–2023 A1 Healthcare, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
+      {% endblock  %}
